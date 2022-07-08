@@ -97,33 +97,33 @@ const Form = (props) => {
 
 
     return (
-        <div class=" place-self">
+        <div className="container">
         
-                <p>First Name:
+                <p className='child'>First Name:
                     <input onChange={firstNameHandler} type="text" name="firstName" id="" />
                     {
                     firstNameError ? <p style={{color:'orange'}}>{firstNameError}</p> : null
                     }
                 </p>
-                <p>Last Name:
+                <p className='child'>Last Name:
                     <input onChange={lastNameHandler} type="text" name="lastName" id=""/>
                     {
                     lastNameError ? <p style={{color:'orange'}}>{lastNameError}</p> : null
                     }
                 </p>
-                <p>Email:
+                <p className='child'>Email:
                     <input onChange={emailHandler} type="text" name="email" id=""/>
                     {
                     emailError ? <p style={{color:'orange'}}>{emailError}</p> : null
                     }
                 </p>
-                <p>Password:
+                <p className='child'>Password:
                     <input onChange={passwordHandler} type="password" name="password" id=""/>
                     {
                     passwordError ? <p style={{color:'orange'}}>{passwordError}</p> : null
                     }
                 </p>
-                <p>Confirm Password:
+                <p className='child'>Confirm Password:
                     <input onChange={confirmHandler} type="password" name="confirm" id=""/>
                     {
                     confirmError ? <p style={{color:'red'}}>{confirmError}</p> : null
