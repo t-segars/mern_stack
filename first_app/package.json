@@ -31,13 +31,14 @@
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 firefox developer version",
+      "last 1 safari  version"
     ]
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.5"
+    "tailwindcss": "^3.1.5",
+    "terser-brunch": "^4.1.0"
   }
 }
