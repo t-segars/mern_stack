@@ -15,6 +15,8 @@ function App() {
   const handleNewTodoSubmit = (event) => {
   event.preventDefault();
 
+
+  // while empty
   if (newTodo.length === 0){
     return;
   }
@@ -28,6 +30,8 @@ function App() {
   setNewTodo("");
   };
 
+
+  // delete and filter
  const handleTodoDelete = (delIdx) => {
 const filteredTodos = todos.filter((todo, i) => {
   return i !== delIdx;

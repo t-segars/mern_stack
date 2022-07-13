@@ -11,15 +11,9 @@ const Example = (props) => {
   const [pokemon, setPokemon] = useState();
 
   const pokemonHandler = () => {
-    // --------------VANILLA JS METHOD (FETCH)-----------//
-    // fetch("https://pokeapi.co/api/v2/pokemon/?limit=807")
-      // SUCCESSFUL RESPONSE
-      // .then(response => response.json())
-      // .then(response => setPokemon(response.results))
-      // UNSUCCESSFUL RESPONSE
-      // .catch(err => console.error("ERROR", err))
+  
 
-    // -------------AXIOS----------------------------//
+    // -------------AXIOS---------//
     axios.get("https://pokeapi.co/api/v2/pokemon/?limit=807")
       // SUCCESSFUL RESPONSE
       .then(response => {
@@ -45,5 +39,6 @@ const Example = (props) => {
       </div>
     </fieldset>
   );
+  
 }
 export default Example;
