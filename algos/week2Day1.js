@@ -32,3 +32,36 @@ const expected3 = [];
  *    deduped.
  */
 function orderedIntersection(sortedA, sortedB) {}
+
+
+/* destructively finds the intersection of 
+ * two arrays in a simple fashion.  
+ *
+ * PARAMS
+ *  a - first array, must already be sorted
+ *  b - second array, must already be sorted
+ *
+ * NOTES
+ *  State of input arrays is undefined when
+ *  the function returns.  They should be 
+ *  (prolly) be dumped.
+ *
+ *  Should have O(n) operations, where n is 
+ *    n = MIN(a.length, b.length)
+ */
+function intersection_destructive(a, b)
+{
+  var result = [];
+  while( a.length > 0 && b.length > 0 )
+  {  
+     if      (a[0] < b[0] ){ a.shift(); }
+     else if (a[0] > b[0] ){ b.shift(); }
+     else /* they're equal */
+     {
+       result.push(a.shift());
+       b.shift();
+     }
+  }
+
+  return result;
+}
