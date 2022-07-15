@@ -1,20 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Auth from './components/Auth';
-import Dashboard from './components/Dashboard';
-import { Routes, Route } from 'react-router-dom'
 
+import './App.css';
+import React from 'react'
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Search from './components/Search'
+import People from './views/People'
+import Planet from './views/Planets'
 
 function App() {
   return (
-    <fieldset>
-      <legend>App.js</legend>
-      <Routes >
-        <Route path="/" element={<Auth />} />
-        <Route path="/dashboard" element={<Dashboard /> }/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Search />}>
+          <Route path="/people/:index" element={<People />} />
+          <Route path="/planets/:index" element={<Planet />} />
+        </Route>
       </Routes>
-    </fieldset>
-  );
+    </BrowserRouter>
+
+  )
 }
 
 export default App;
