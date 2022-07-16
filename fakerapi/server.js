@@ -1,22 +1,28 @@
-// 1. IMPORT YOUR  DEPENENCIES
-import express from 'express';
-import faker from 'faker';
-
-    const { response } = require('express');
-const express = require ('express');
-// 2. INSTANTIATE AN EXPRESS SEVER
+const express = require('express');
 const app = express();
 const port = 8000;
+const { faker } = require('@faker-js/faker');
+const User = require("./user.js");
+const Company = require("./company.js");
 
 
-    
-// req is shorthand for request
-// res is shorthand for response
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello World" });
-});
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+app.get("/api/users/new", (req, res)=>{
+
+    res.json(new User());
+})
+
+app.get("/api/companies/new", (req, res)=>{
+
+    res.json(new Company());
+})
+
+app.get("/api/user/company", (req, res)=>{
+
+    res.json([new Company(), new User()]);
+})
 
 
-// 4. run your express server
-// this needs to be below the other code blocks
-app.listen( port, () => console.log(`Listening on port: ${port}`) );
+app.listen(port, ()=>console.log(`running on port ${port} is a new way I like to be!`));
