@@ -39,8 +39,10 @@ module.exports.deleteJoke = (req, res) => {
 }
 
 // get a random joke
-// module.exports.randomJoke = (req, res) => {
-//     Joke.findOne(req.params.id)
-//     .then(joke => res.json(joke))
-//     .catch(error => res.json(error))
-// }
+module.exports.randomJoke = (req, res) => {
+    Joke.find()
+    .then(jokes => {
+        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)]
+        res.json(randomJoke)
+    }).catch(error => res.json(error))
+}
