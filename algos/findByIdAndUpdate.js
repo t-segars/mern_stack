@@ -66,29 +66,29 @@ const students = [
   * - Time: O(?).
   * - Space: O(?).
   * @param {number} id
-  * @param {Object} updatedVals Key value pairs used to update the found obj.
-  * @param {Array<Object>} collection
+  * @param {Object} updateObj Key value pairs used to update the found obj.
+  * @param {Array<Object>} students
   * @returns {?Object} The object that was updated or null if no object found.
   */
-  function findByIdAndUpdate(id, updatedVals, collection) {
-    if (!updatedVals) return null
+  function findByIdAndUpdate(id, updateObj, students) {
+    if (!updateObj) return null
     // Find Matching Object by id
     let matchingIndex;
-    collection.forEach( (obj, idx) => {
+    students.forEach( (obj, idx) => {
         // Update vals in place
-        console.log(`Collection iteration #${idx+1}.`)
+        console.log(`Students iteration #${idx+1}.`)
         if (obj.id === id) {
             console.log("Matching ID found")
-            for (let key in updatedVals) {
+            for (let key in updateObj) {
                 if (key in obj) {
-                    collection[idx][key] = updatedVals[key]
+                    students[idx][key] = updateObj[key]
                 }
             }
             matchingIndex = idx;
         }
     });
     // return matching object
-    return collection[matchingIndex] || `No match found for ID: ${id}`
+    return students[matchingIndex] || `No match found for ID: ${id}`
   }
   console.log(findByIdAndUpdate(id1, updateData1, students))
   console.log(findByIdAndUpdate(id2, updateData2, students))
