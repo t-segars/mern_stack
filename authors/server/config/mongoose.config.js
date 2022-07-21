@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost/authors', {
+mongoose.connect('mongodb://localhost/templates', {
 
     useNewUrlParser: true,
     useUnifiedTopology: true

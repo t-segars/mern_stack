@@ -7,7 +7,8 @@
 [ ] ```cd example``` <br>
 ### Server Side
 [ ] ```npx create-react-app client ``` <br>
-[ ] ```cd client``` <br>
+[ ] ```cd client``` 
+<br>
 [ ] ```npm i axios react-router-dom``` <br>
 [ ] ```mkdir config controllers models routes``` <br>
 

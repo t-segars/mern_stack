@@ -1,18 +1,10 @@
-import Main from "./pages/Main";
-import Detail from "./pages/Detail";
-import Edit from "./pages/Edit";
-import {Routes, Route} from "react-router-dom"
-
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
     <fieldset>
       <legend>App.js</legend>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/:user_id" element={<Detail />} />
-        <Route path="/:user_id/edit" element={<Edit />} />
-      </Routes>
     </fieldset>
   );
 }
