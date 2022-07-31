@@ -12,7 +12,8 @@
 function filterByKey(items, searchFor, searchBy){
     let returnArr = [];
     for (let i = 0; i < items.length; i++){
-            if (items[i][searchBy] == searchBy && items[i][key].includes(searchFor)){
+        for (searchBr in items[i]){
+            if (searchBy == searchBy && items[i][key].startsWith(searchFor)){
 // The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.             
                 returnArr.push(items[i])
             }
@@ -20,6 +21,7 @@ function filterByKey(items, searchFor, searchBy){
     }
     return returnArr;
 }
+
 const people = [
     {
         firstName: "John",
